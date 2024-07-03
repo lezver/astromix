@@ -1,0 +1,141 @@
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/placeholders';
+
+main {
+  margin-top: $u49;
+  padding: $u17 $u16 $u35;
+  flex: 1 1 auto;
+
+  @include breakpoint(des) {
+    margin-top: 0;
+    padding: $u36 $u45;
+  }
+}
+
+.main__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $u17;
+  column-gap: $u8;
+
+  @include breakpoint(des) {
+    margin-bottom: $u30;
+  }
+
+  & > h1 {
+    font-size: $u30;
+    line-height: 110%;
+    color: $martinique;
+    font-weight: inherit;
+
+    @include breakpoint(des) {
+      font-size: $u50;
+    }
+  }
+
+  & > ul {
+    @extend %list-style;
+    display: flex;
+
+    & > li > button {
+      margin: 0;
+      padding: $u7 $u13;
+      background-color: $white-lilac;
+      border: $u1 solid $white-lilac;
+    }
+
+    & > li:first-child > button {
+      border: $u1 solid $victoria2;
+    }
+    & > li:nth-child(2) > button {
+      border-right-color: rgb(192, 193, 200);
+    }
+    & > li:last-child > button {
+      background-color: $victoria2;
+      border: $u1 solid $victoria2;
+    }
+  }
+}
+
+.main__list {
+  @extend %list-style;
+  margin-bottom: $u25;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include breakpoint(tab) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @include breakpoint(des) {
+    margin-bottom: $u45;
+  }
+
+  & > li {
+    padding: $u50 $u20 $u20 $u20;
+    border: $u1 solid $alto;
+
+    transition: border $time $time-distribution;
+
+    &:hover {
+      border-color: $martinique;
+      box-shadow: 0 5px 20px 0 rgba(82, 69, 138, 0.3);
+      cursor: pointer;
+      position: relative;
+
+      @include breakpoint(des) {
+        & > h2::after {
+          position: absolute;
+          content: url('../img/products/list/arrow.png');
+          margin-left: 5%;
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+
+    & > img {
+      margin: $u0 auto $u50 auto;
+
+      @include breakpoint(des) {
+        margin-bottom: 90px;
+      }
+    }
+    & > h2 {
+      font-size: $u16;
+      line-height: 1.56;
+      margin-bottom: $u1;
+      font-weight: inherit;
+    }
+    & > p {
+      font-family: $ff-ibm;
+      font-weight: inherit;
+      font-size: $u13;
+      color: $boulder;
+      line-height: 1.15;
+    }
+
+    @include breakpoint(des) {
+      padding-top: 95px;
+
+      & > h2 {
+        font-size: $u20;
+      }
+      & > p {
+        font-size: $u16;
+      }
+    }
+  }
+}
+
+.main__text {
+  font-family: $ff-ibm;
+  font-weight: inherit;
+  font-size: $u16;
+  color: $martinique;
+  max-width: 691px;
+}

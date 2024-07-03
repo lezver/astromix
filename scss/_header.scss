@@ -1,0 +1,182 @@
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/placeholders';
+
+header {
+  background: $header-linear, $deep-cove;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: all $time $time-distribution;
+
+  &.active {
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint(tab) {
+      top: 0;
+      left: 0;
+      height: auto;
+    }
+  }
+
+  @include breakpoint(des) {
+    position: static;
+    max-width: 300px;
+    background: url('/img/bg-header.png') no-repeat bottom, $header-radial,
+      $deep-cove;
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  column-gap: $u13;
+
+  padding: $u7 $u15;
+  padding-left: $u14;
+
+  transition: opacity $time $time-distribution;
+
+  &:hover,
+  &:focus {
+    opacity: 0.95;
+  }
+
+  & > span {
+    margin-right: auto;
+    color: $white;
+    font-size: $u13;
+    background-color: $moody-blue;
+    padding: 0 $u6;
+    line-height: 120%;
+    font-weight: inherit;
+  }
+
+  & > button {
+    margin: auto $u0;
+    background-color: transparent;
+    border: none;
+    transition: transform $time $time-distribution;
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @include breakpoint(des) {
+      display: none;
+    }
+  }
+  @include breakpoint(des) {
+    margin-bottom: 150px;
+  }
+}
+
+.header__list {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  & > ul {
+    @extend %list-style;
+
+    & > li {
+      padding-left: $u30;
+      transition: background $time $time-distribution;
+      &:hover {
+        background-color: $victoria;
+      }
+
+      & > a {
+        @extend %link;
+        color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: $u20;
+        font-weight: inherit;
+        line-height: 125%;
+        padding: $u13 0;
+        padding-right: $u25;
+      }
+
+      &:not(:last-child) > a {
+        border-bottom: $u1 solid rgba(255, 255, 255, 0.2);
+      }
+
+      &:nth-child(2) {
+        & > a {
+          border-bottom: none;
+        }
+      }
+
+      &:nth-child(3) {
+        background-color: $victoria;
+        & > a {
+          border-bottom: none;
+        }
+      }
+
+      &:nth-child(5) > a {
+        position: relative;
+        &::after {
+          display: block;
+          content: '';
+          width: $u79;
+          height: 1px;
+          background-color: $white;
+          position: absolute;
+          bottom: $u16;
+        }
+      }
+    }
+  }
+  &.active {
+    overflow: visible;
+    height: 100%;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @include breakpoint(des) {
+    overflow: visible;
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+.header__date {
+  color: $cadet-blue;
+  text-align: center;
+  font-size: $u14;
+  font-family: $ff-ibm;
+  font-weight: inherit;
+
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+
+  &.active {
+    margin-bottom: $u21;
+    height: fit-content;
+    overflow: visible;
+    opacity: 1;
+  }
+
+  @include breakpoint(des) {
+    height: fit-content;
+    overflow: visible;
+    opacity: 1;
+    margin-bottom: $u26;
+  }
+}

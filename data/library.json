@@ -1,0 +1,66 @@
+{
+  "header": {
+    "beta": "beta",
+    "list": [
+      "Dashboard",
+      "Lab",
+      "Products",
+      "Messages",
+      "Settings",
+      "Profile",
+      "Help"
+    ]
+  },
+  "main": {
+    "title": "Products",
+    "controls": [
+      "./img/products/controls/t1.png",
+      "./img/products/controls/t2.png",
+      "./img/products/controls/t3.png",
+      "./img/products/controls/t4.png"
+    ],
+    "list": [
+      {
+        "src": "./img/products/list/img-1.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-2.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-3.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-4.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-5.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-6.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-7.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      },
+      {
+        "src": "./img/products/list/img-8.jpg",
+        "title": "Product Name",
+        "text": "Text about product"
+      }
+    ],
+    "lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+  }
+}
