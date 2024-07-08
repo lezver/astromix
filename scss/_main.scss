@@ -6,6 +6,7 @@ main {
   margin-top: $u49;
   padding: $u17 $u16 $u35;
   flex: 1 1 auto;
+  overflow-y: auto;
 
   @include breakpoint(des) {
     margin-top: 0;
